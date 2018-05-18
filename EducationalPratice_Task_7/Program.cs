@@ -43,7 +43,10 @@ namespace EducationalPratice_Task_7
 
         static int f(int x1, int x2, int x3)
         {
+            int f = 0;
             Console.Write($"F({x1},{x2},{x3}");
+            f=1+x1+x3
+            
         }
     }
 }
