@@ -100,55 +100,11 @@ namespace EducationalPratice_Task_7
             }
             else
             {
-               
                 LinearFunc.Add(vector_func);//Добавляем булевую функции в список
             }
         }
 
-        /// <summary>
-        /// Поиск функций
-        /// </summary>
-        /// <param name="vector_func"></param>
-        static void FindAllFunc(string[] vector_func,string vector)
-        {
-            int counter = vector.Length;
-            string vc_1 = vector;
-            string vc_2 = vector;
-            if (counter == vector_func.Length)
-            {
-                return;
-            }
-            else
-            {
-                for (int i = vector.Length; i < vector_func.Length; i++)
-                {
-                    string foo = vector_func[i];
-                    if (vector.Length == vector_func.Length)
-                    {
-                        break;
-                    }
-                    counter++;
-                    vc_1 += foo;
-                    vc_2 += foo;
-                    if (foo == "*")
-                    {
-                        vc_1 = vc_1.Replace('*', '0');
-                        vc_2 = vc_2.Replace('*', '1');
-                        FindAllFunc(vector_func, vc_1);
-                        FindAllFunc(vector_func, vc_2); 
-                    }
-                }
-                Add(vc_1);
-                Add(vc_2);
-            }        
-        }
-        static void Add(string vector)
-        {
-            string[] res = Parse(vector);
-            if(Check(res))
-            BooleanFunctions.Add(res);
-            
-        }
+       
         /// <summary>
         /// Перевод вектора
         /// </summary>
@@ -161,27 +117,7 @@ namespace EducationalPratice_Task_7
                 res[index] = vector[index].ToString();
             return res;
         }
-        static string UnParse(string[] vector)
-        {
-            string res = "";
-            foreach (var item in vector)
-            {
-                res += item;
-            }
-            return res;
-        }
-        static bool Check(string[] item)
-        {
-            foreach (var text in BooleanFunctions)
-            {
-                if (Convert.ToInt32(UnParse(text)) == Convert.ToInt32(UnParse(item)))
-                {
-                    return false;
-                }
-               
-            }
-            return true;
-        }
+      
         
     }
 }
